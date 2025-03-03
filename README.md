@@ -61,11 +61,46 @@ The RentalHouse API is a RESTful web service that allows users to manage rental 
 
 4. Run database migrations to set up the database schema:
 
+   Create your Database in your PhpMyAdmin, then update your credentials by creating the `config/config.json` file then
+
+   ```bash
+   {
+     "development": {
+       "username": "root", (this is the default one for me, you can change it based to your DB)
+       "password": "root", (this is the default one for me, you can change it based to your DB)
+       "database": "<Name of you database>",
+       "host": "<your server host>",
+       "port": "<your port>", 
+       "dialect": "mysql"
+     },
+     "test": {
+       "username": "root", (this is the default one for me, you can change it based to your DB)
+       "password": "root", (this is the default one for me, you can change it based to your DB)
+       "database": "<Name of you database>",
+       "host": "<your server host>",
+       "port": "<your port>", 
+       "dialect": "mysql"
+     },
+     "production": {
+       "username": "root", (this is the default one for me, you can change it based to your DB)
+       "password": "root", (this is the default one for me, you can change it based to your DB)
+       "database": "<Name of you database>",
+       "host": "<your server host>",
+       "port": "<your port>", 
+       "dialect": "mysql"
+     }
+   }
+   ```
+
+5. Run database migrations to set up the database schema:
+
    ```bash
    npx sequelize-cli db:migrate
    ```
 
-5. Start the server:
+   Note: If not working consider checking if you have migrations files, if not please create them before this commend
+
+6. Start the server:
 
    ```bash
    npm start
